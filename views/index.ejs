@@ -24,7 +24,7 @@
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <% for (var i=0; i < blogposts.length; i++) { %>
                             <div class="post-preview">
-                                <a href="post.html">
+                                <a href="/post/<%= blogposts[i]._id %>">
                                     <h2 class="post-title">
                                         <%= blogposts[i].title %>
                                     </h2>
@@ -33,21 +33,19 @@
                                     </h3>
                                 </a>
                                 <p class="post-meta">Posted by
-                                    <a href="#">Start Bootstrap</a>
-                                    on September 24, 2019
+                                    <a href="#"><%= blogposts[i].username %></a>
+                                    on <%= blogposts[i].datePosted.toDateString() %>
                                 </p>
                             </div>
                             <hr>
                             <% } %>
                                 <!-- Pager -->
-                                …
                     </div>
                 </div>
             </div>
-            <hr>
             <!-- Footer-->
             <%- include('layouts/footer'); -%>
-                <%- include('layouts/scripts'); -%>
+            <%- include('layouts/scripts'); -%>
     </body>
 
 </html>
